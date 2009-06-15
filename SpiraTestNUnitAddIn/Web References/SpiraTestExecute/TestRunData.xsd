@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://www.inflectra.com/SpiraTest/DataSets/TestRunDataSet.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://www.inflectra.com/SpiraTest/DataSets/TestRunDataSet.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.inflectra.com/SpiraTest/DataSets/TestRunDataSet.xsd" id="TestRunData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" name="TestRunData">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="TestRun">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="TestRunId" type="xs:int" />
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="TestCaseId" type="xs:int" />
+              <xs:element name="TestRunTypeId" type="xs:int" />
+              <xs:element name="TesterId" type="xs:int" />
+              <xs:element name="ExecutionStatusId" type="xs:int" />
+              <xs:element minOccurs="0" name="ReleaseId" type="xs:int" />
+              <xs:element name="StartDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RunnerName" type="xs:string" />
+              <xs:element minOccurs="0" name="RunnerTestName" type="xs:string" />
+              <xs:element minOccurs="0" name="RunnerAssertCount" type="xs:int" />
+              <xs:element minOccurs="0" name="RunnerMessage" type="xs:string" />
+              <xs:element minOccurs="0" name="RunnerStackTrace" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TestRunTypeName" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TesterName" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ExecutionStatusName" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ReleaseName" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ReleaseVersionNumber" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TestRunStep">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="TestRunStepId" type="xs:int" />
+              <xs:element name="TestRunId" type="xs:int" />
+              <xs:element minOccurs="0" name="TestStepId" type="xs:int" />
+              <xs:element name="ExecutionStatusId" type="xs:int" />
+              <xs:element name="Description" type="xs:string" />
+              <xs:element name="Position" type="xs:int" />
+              <xs:element minOccurs="0" name="ExpectedResult" type="xs:string" />
+              <xs:element minOccurs="0" name="SampleData" type="xs:string" />
+              <xs:element minOccurs="0" name="ActualResult" type="xs:string" />
+              <xs:element minOccurs="0" name="IncidentName" type="xs:string" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ExecutionStatusName" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="pkTestRun">
+      <xs:selector xpath=".//mstns:TestRun" />
+      <xs:field xpath="mstns:TestRunId" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="pkTestRunStep">
+      <xs:selector xpath=".//mstns:TestRunStep" />
+      <xs:field xpath="mstns:TestRunStepId" />
+    </xs:unique>
+    <xs:keyref name="fkTestRunTestRunStep" refer="mstns:pkTestRun">
+      <xs:selector xpath=".//mstns:TestRunStep" />
+      <xs:field xpath="mstns:TestRunId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
