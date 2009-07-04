@@ -24,14 +24,14 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 
 			try
 			{
-				if (test is TestCase)
+				if (test is TestMethod)
 				{
 					Attribute attribute = Reflect.GetAttribute (member, "Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework.SpiraTestCaseAttribute", false);
 					if (attribute != null)
 					{
 						//Get the test case id from the test case attribute
 						int testCaseId = (int)Reflect.GetPropertyValue (attribute, "TestCaseId", BindingFlags.Public | BindingFlags.Instance);
-						test = new SpiraTestCase ((TestCase) test, testCaseId);
+                        test = new SpiraTestCase((TestMethod)test, testCaseId);
 					}
 				}
 

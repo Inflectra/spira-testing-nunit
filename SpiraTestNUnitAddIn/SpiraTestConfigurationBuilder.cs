@@ -10,7 +10,7 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 	/// <summary>
 	/// SpiraTestConfigurationBuilder knows how to build a SpiraTestConfiguration class
 	/// </summary>
-	public class SpiraTestConfigurationBuilder : NUnitTestFixtureBuilder
+    public class SpiraTestConfigurationBuilder : NUnitTestFixtureBuilder, ISuiteBuilder
 	{
 		private const string CLASS_NAME = "SpiraTestConfigurationBuilder::";
 
@@ -44,9 +44,9 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 		/// This builder delegates all the work to the constructor of the  
 		/// extension suite
 		/// </remarks>
-		protected override TestSuite MakeSuite(Type type)
+		protected new TestSuite BuildFrom(Type type)
 		{
-			const string METHOD_NAME = "MakeSuite: ";
+            const string METHOD_NAME = "BuildFrom: ";
 
 			try
 			{
@@ -77,7 +77,7 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 		/// Note that an attribute does not have to be used. You can use any arbitrary
 		/// set of rules that can be implemented using reflection on the type.
 		/// </remarks>
-		public override bool CanBuildFrom(Type type)
+		public new bool CanBuildFrom(Type type)
 		{
 			return Reflect.HasAttribute (type, "Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework.SpiraTestConfigurationAttribute", false);
 		}

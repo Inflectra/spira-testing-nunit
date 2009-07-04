@@ -14,23 +14,24 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 	/// This class extends the built-in NUnit test case to provide support for logging the execution
 	/// results with the configured instance of SpiraTest
 	/// </summary>
-	public class SpiraTestCase : TestCase
+	public class SpiraTestCase : TestMethod
 	{
 		private const string CLASS_NAME = "SpiraTestCase::";
 		protected const string TEST_EXECUTE_WEB_SERVICES_URL = "/Services/TestExecute.asmx";
 
-		protected TestCase testCase;
+        protected TestMethod testMethod;
 		protected int testCaseId = 0;
 
 		/// <summary>
 		/// The constructor method for the class. Sets the local member variables with the passed in values
 		/// </summary>
-		/// <param name="testCase">The NUnit Test Case</param>
+        /// <param name="testMethod">The NUnit Test Method</param>
 		/// <param name="testCaseId">The ID of the matching SpiraTest test case</param>
-		public SpiraTestCase (TestCase testCase, int testCaseId) : base (testCase.TestName.FullName, testCase.TestName.Name)
+        public SpiraTestCase(TestMethod testMethod, int testCaseId)
+            : base(testMethod.Method)
 		{
 			//Set the member variables
-			this.testCase = testCase;
+            this.testMethod = testMethod;
 			this.testCaseId = testCaseId;
 		}
 
@@ -38,17 +39,17 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 		/// Executes the NUnit test case
 		/// </summary>
 		/// <param name="result">The test case result</param>
-		public override void Run(TestCaseResult result)
+		public override void Run(TestResult result)
 		{
 			const string METHOD_NAME = "Run: ";
 
 			try
 			{
 				//Call the base method to log the result within NUnit
-				testCase.Run (result);
+                testMethod.Run(result);
 
 				//Get the URL, Login, Password and ProjectId from the parent test fixture attribute
-				Type type = testCase.FixtureType;
+                Type type = testMethod.FixtureType;
 				Attribute attribute = Reflect.GetAttribute (type, "Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework.SpiraTestConfigurationAttribute", false);
 				if (attribute == null)
 				{
