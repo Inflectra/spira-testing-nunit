@@ -14,14 +14,14 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 	{
 		private const string CLASS_NAME = "SpiraTestConfigurationBuilder::";
 
-		protected SpiraTestExecute.TestExecute spiraTestExecuteProxy;
+		protected SpiraImportExport.ImportExport spiraTestExecuteProxy;
 
 		#region Properties
 
 		/// <summary>
 		/// The current SpiraTest web services proxy class
 		/// </summary>
-		public SpiraTestExecute.TestExecute SpiraTestExecuteProxy
+        public SpiraImportExport.ImportExport SpiraTestExecuteProxy
 		{
 			get
 			{

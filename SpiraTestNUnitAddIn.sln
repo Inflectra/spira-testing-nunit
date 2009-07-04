@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestSuite", "SampleTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraTestFramework", "SpiraTestFramework\SpiraTestFramework.csproj", "{7E61A312-07E9-4C59-B5D6-622925375A12}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NUnitAddinSetup", "NUnitAddinSetup\NUnitAddinSetup.vdproj", "{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumSampleTest", "SeleniumSampleTest\SeleniumSampleTest.csproj", "{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}"
 EndProject
 Global
@@ -28,8 +26,6 @@ Global
 		{7E61A312-07E9-4C59-B5D6-622925375A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Debug|Any CPU.ActiveCfg = Debug
-		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Release|Any CPU.ActiveCfg = Release
 		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
 	EndGlobalSection
 EndGlobal

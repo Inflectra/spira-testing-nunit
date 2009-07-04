@@ -11,8 +11,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Inflectra Corporation")]
 [assembly: AssemblyProduct("SpiraTest")]
-[assembly: AssemblyCopyright("Copyright (C) 2006-2007 Inflectra Corporation")]
-[assembly: AssemblyTrademark("Inflectra and SpiraTest are either registered trademarks or trademarks of Inflectra Corporation in the U.S. and/or other countries.")]
+[assembly: AssemblyCopyright("Copyright (C) 2006-2009 Inflectra Corporation")]
+[assembly: AssemblyTrademark("Inflectra and SpiraTest are registered trademarks of Inflectra Corporation in the U.S. and/or other countries.")]
 [assembly: AssemblyCulture("")]		
 
 //
@@ -26,7 +26,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.2.*")]
+[assembly: AssemblyVersion("2.2.0.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

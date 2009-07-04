@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost/SpiraTest/Services/TestExecute.asmx?disco" filename="TestExecute.disco" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost/SpiraTest/Services/TestExecute.asmx?schema=TestRunData" filename="TestRunData.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/SpiraTest/Services/TestExecute.asmx?wsdl" filename="TestExecute.wsdl" />
-  </Results>
-</DiscoveryClientResultsFile>

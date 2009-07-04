@@ -12,7 +12,7 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 		private string login;
 		private string password;
 		private int projectId;
-		private int releaseId;
+		private Nullable<int> releaseId;
 		private RunnerName runner;
 
 		#region Enumerations
@@ -103,9 +103,9 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 		}
 
 		/// <summary>
-		/// The SpiraTest release being tested
+        /// The SpiraTest release/iteration that the results are to be recorded against
 		/// </summary>
-		public int ReleaseId
+        public Nullable<int> ReleaseId
 		{
 			get
 			{
@@ -116,6 +116,15 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 				this.releaseId = value;
 			}
 		}
+
+        /// <summary>
+        /// The SpiraTest Test Set that the results are to be recorded against
+        /// </summary>
+        public Nullable<int> TestSetId
+        {
+            get;
+            set;
+        }
 
 		#endregion
 
@@ -133,7 +142,8 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 			this.login = login;
 			this.password = password;
 			this.projectId = projectId;
-			this.releaseId = -1;
+			this.releaseId = null;
+            this.TestSetId = null;
 			this.runner = RunnerName.NUnit;
 		}
 
@@ -152,8 +162,9 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 			this.login = login;
 			this.password = password;
 			this.projectId = projectId;
-			this.releaseId = -1;
-			this.runner = runner;
+			this.releaseId = null;
+            this.TestSetId = null;
+            this.runner = runner;
 		}
 
 		/// <summary>
@@ -172,7 +183,8 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 			this.password = password;
 			this.projectId = projectId;
 			this.releaseId = releaseId;
-			this.runner = RunnerName.NUnit;
+            this.TestSetId = null;
+            this.runner = RunnerName.NUnit;
 		}
 
 		/// <summary>
@@ -192,8 +204,46 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SpiraTestFramework
 			this.password = password;
 			this.projectId = projectId;
 			this.releaseId = releaseId;
-			this.runner = RunnerName.NUnit;
+            this.TestSetId = null;
+            this.runner = RunnerName.NUnit;
 			this.runner = runner;
 		}
+
+        /// <summary>
+        /// The constructor is called when the attribute is set.
+        /// </summary>
+        /// <param name="url">The URL to the SpiraTest instance</param>
+        /// <param name="login">A valid SpiraTest login</param>
+        /// <param name="password">A valid SpiraTest password</param>
+        /// <param name="projectId">The SpiraTest project being tested</param>
+        /// <param name="releaseId">The ID of the release being tested (pass -1 to use the release associated with the test set)</param>
+        /// <param name="testSetId">The ID of the test set being tested (pass -1 to not record against a test set)</param>
+        /// <param name="runner">The name of the runner that should be reported back to SpiraTest</param>
+        public SpiraTestConfigurationAttribute(string url, string login, string password, int projectId, int releaseId, int testSetId, RunnerName runner)
+        {
+            //Update the local member variables
+            this.url = url;
+            this.login = login;
+            this.password = password;
+            this.projectId = projectId;
+            if (releaseId == -1)
+            {
+                this.releaseId = null;
+            }
+            else
+            {
+                this.releaseId = releaseId;
+            }
+            if (testSetId == -1)
+            {
+                this.TestSetId = null;
+            }
+            else
+            {
+                this.TestSetId = testSetId;
+            }
+            this.runner = RunnerName.NUnit;
+            this.runner = runner;
+        }
 	}
 }
