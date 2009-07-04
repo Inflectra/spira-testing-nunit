@@ -1,7 +1,7 @@
 "DeployProject"
 {
-"VSVersion" = "3:701"
-"ProjectType" = "8:{2C2AF0D9-9B47-4FE5-BEF2-169778172667}"
+"VSVersion" = "3:800"
+"ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:NUnitAddinSetup"
 "LanguageId" = "3:1033"
@@ -57,30 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5DAE8C242E1F41639A35AF2D13112EC0"
-        "OwnerKey" = "8:_35EA0154C04C4E53ADA52B1C23925B5B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5DAE8C242E1F41639A35AF2D13112EC0"
-        "OwnerKey" = "8:_6F6C0E313996414CAFDA0A3153D18D61"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5DAE8C242E1F41639A35AF2D13112EC0"
-        "OwnerKey" = "8:_FFFFC2832A780FC890BEB782DC32314B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5DAE8C242E1F41639A35AF2D13112EC0"
-        "OwnerKey" = "8:_CDC83638C62BB1C155030077C8971838"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6F6C0E313996414CAFDA0A3153D18D61"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -123,18 +99,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CDC83638C62BB1C155030077C8971838"
-        "OwnerKey" = "8:_FFFFC2832A780FC890BEB782DC32314B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CDC83638C62BB1C155030077C8971838"
-        "OwnerKey" = "8:_6F6C0E313996414CAFDA0A3153D18D61"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D1415AAB47F947EB8B5E4BB777E0FBA7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -157,12 +121,6 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_FFFFC2832A780FC890BEB782DC32314B"
-        "OwnerKey" = "8:_6F6C0E313996414CAFDA0A3153D18D61"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -181,6 +139,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -197,6 +163,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -214,21 +188,20 @@
         {
             "LaunchCondition"
             {
-                "{2522A265-4974-4402-83C5-3B575A2E935A}:_D86756770B804FD18947A2551A9654FB"
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_D86756770B804FD18947A2551A9654FB"
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "SupportedRuntimes" = "8:1.1.4322"
+                "Version" = "8:3.5.21022"
+                "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=9832"
+                "SupportedRuntimes" = "8:1.1.4322"
                 }
             }
         }
-        "Feature"
-        {
-        }
         "File"
         {
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_1729E4AE713C4021A4CC0D45CEF53B4F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1729E4AE713C4021A4CC0D45CEF53B4F"
             {
             "SourcePath" = "8:..\\SpiraTestFramework\\AssemblyInfo.cs"
             "TargetName" = "8:AssemblyInfo.cs"
@@ -248,7 +221,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3175AA78A8334908A4133D3ADCD7EF56"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3175AA78A8334908A4133D3ADCD7EF56"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestNUnitAddIn.csproj"
             "TargetName" = "8:SpiraTestNUnitAddIn.csproj"
@@ -268,18 +241,13 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_35EA0154C04C4E53ADA52B1C23925B5B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_35EA0154C04C4E53ADA52B1C23925B5B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:SpiraTestFramework, Version=1.0.2992.21402, Culture=neutral"
                 "ScatterAssemblies"
                 {
-                    "_35EA0154C04C4E53ADA52B1C23925B5B"
-                    {
-                    "Name" = "8:SpiraTestFramework.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\SpiraTestFramework\\bin\\Release\\SpiraTestFramework.dll"
             "TargetName" = "8:"
@@ -299,7 +267,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_3E01C4B405A44176B67F4E28145873C1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3E01C4B405A44176B67F4E28145873C1"
             {
             "SourcePath" = "8:..\\SpiraTestFramework\\SpiraTestFramework.csproj"
             "TargetName" = "8:SpiraTestFramework.csproj"
@@ -319,7 +287,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_409ADF5470E44D048122E46F9842DBB0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_409ADF5470E44D048122E46F9842DBB0"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestConfigurationBuilder.cs"
             "TargetName" = "8:SpiraTestConfigurationBuilder.cs"
@@ -339,7 +307,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_4BB41CA9AA0643588EFEFC313C033935"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BB41CA9AA0643588EFEFC313C033935"
             {
             "SourcePath" = "8:..\\SampleTestSuite\\SampleTestFixture.cs"
             "TargetName" = "8:SampleTestFixture.cs"
@@ -359,7 +327,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_525B171A53AD4A4DA05E5C190F32C14A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_525B171A53AD4A4DA05E5C190F32C14A"
             {
             "SourcePath" = "8:..\\SpiraTestFramework\\SpiraTestConfigurationAttribute.cs"
             "TargetName" = "8:SpiraTestConfigurationAttribute.cs"
@@ -379,18 +347,13 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_6F6C0E313996414CAFDA0A3153D18D61"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6F6C0E313996414CAFDA0A3153D18D61"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:SpiraTestNUnitAddIn, Version=1.2.2992.21498, Culture=neutral"
                 "ScatterAssemblies"
                 {
-                    "_6F6C0E313996414CAFDA0A3153D18D61"
-                    {
-                    "Name" = "8:SpiraTestNUnitAddIn.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\bin\\Release\\SpiraTestNUnitAddIn.dll"
             "TargetName" = "8:"
@@ -410,7 +373,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_75208293821245688C9358B6CDE0C775"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75208293821245688C9358B6CDE0C775"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\AssemblyInfo.cs"
             "TargetName" = "8:AssemblyInfo.cs"
@@ -430,7 +393,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_8B24229A872A4D26841561B7080B7DE0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B24229A872A4D26841561B7080B7DE0"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestAddin.cs"
             "TargetName" = "8:SpiraTestAddin.cs"
@@ -450,7 +413,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_9062D91C199646E3A9C615FC24E0FEC7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9062D91C199646E3A9C615FC24E0FEC7"
             {
             "SourcePath" = "8:bannrbmp.bmp"
             "TargetName" = "8:bannrbmp.bmp"
@@ -470,7 +433,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_A83E9A6B816C457681250492717AA7AA"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A83E9A6B816C457681250492717AA7AA"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn.sln"
             "TargetName" = "8:SpiraTestNUnitAddIn.sln"
@@ -490,7 +453,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_B5AADC0E1B9E41E4A37BED3F8BE39835"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B5AADC0E1B9E41E4A37BED3F8BE39835"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestConfiguration.cs"
             "TargetName" = "8:SpiraTestConfiguration.cs"
@@ -510,7 +473,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_BCA98C97C3AE464895C9F24F19886083"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BCA98C97C3AE464895C9F24F19886083"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestCaseDecorator.cs"
             "TargetName" = "8:SpiraTestCaseDecorator.cs"
@@ -530,38 +493,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_CDC83638C62BB1C155030077C8971838"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:nunit.core.interfaces, Version=2.4.0.2, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77"
-                "ScatterAssemblies"
-                {
-                    "_CDC83638C62BB1C155030077C8971838"
-                    {
-                    "Name" = "8:nunit.core.interfaces.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:nunit.core.interfaces.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1D89E6228254444A8F3A56C4CA6C7041"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_D1415AAB47F947EB8B5E4BB777E0FBA7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D1415AAB47F947EB8B5E4BB777E0FBA7"
             {
             "SourcePath" = "8:..\\SeleniumSampleTest\\GoogleTest.cs"
             "TargetName" = "8:SeleniumGoogleTest.cs"
@@ -581,7 +513,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_DEC6F4D7CAE043F69B38829E69D386C1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DEC6F4D7CAE043F69B38829E69D386C1"
             {
             "SourcePath" = "8:..\\SpiraTestFramework\\SpiraTestCaseAttribute.cs"
             "TargetName" = "8:SpiraTestCaseAttribute.cs"
@@ -601,7 +533,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_EAD6FC5D2FA34768970711A905FADC3B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EAD6FC5D2FA34768970711A905FADC3B"
             {
             "SourcePath" = "8:App.ico"
             "TargetName" = "8:App.ico"
@@ -621,7 +553,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{A582A373-4685-4296-BEFE-614B80A702C3}:_FA6FDE761C4C4A559D9C944F4F2A24A1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FA6FDE761C4C4A559D9C944F4F2A24A1"
             {
             "SourcePath" = "8:..\\SpiraTestNUnitAddIn\\SpiraTestCase.cs"
             "TargetName" = "8:SpiraTestCase.cs"
@@ -641,44 +573,13 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{FB480208-1853-44D0-9ABD-A3B734C3FAAA}:_FFFFC2832A780FC890BEB782DC32314B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:nunit.core, Version=2.4.0.2, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77"
-                "ScatterAssemblies"
-                {
-                    "_FFFFC2832A780FC890BEB782DC32314B"
-                    {
-                    "Name" = "8:nunit.core.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:nunit.core.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_1D89E6228254444A8F3A56C4CA6C7041"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
         }
         "Folder"
         {
-            "{58C0ADA3-3CEA-43BD-A3B3-2EA121BC8217}:_1D89E6228254444A8F3A56C4CA6C7041"
+            "{3C67513D-01DD-4637-8A68-80971EB9504F}:_1D89E6228254444A8F3A56C4CA6C7041"
             {
             "DefaultLocation" = "8:[ProgramFilesFolder]SpiraTest\\[ProductName]"
             "Name" = "8:#1925"
@@ -688,7 +589,7 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_266598AE594E4C55A9F23B7EF5814834"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_266598AE594E4C55A9F23B7EF5814834"
                     {
                     "Name" = "8:Source"
                     "AlwaysCreate" = "11:FALSE"
@@ -697,7 +598,7 @@
                     "Property" = "8:_064561B5D5D84F6B910A886AFBF2FE9D"
                         "Folders"
                         {
-                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_C38E02CE312D48C8889D8DF36DAD5327"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_C38E02CE312D48C8889D8DF36DAD5327"
                             {
                             "Name" = "8:SpiraTestFramework"
                             "AlwaysCreate" = "11:FALSE"
@@ -708,7 +609,7 @@
                                 {
                                 }
                             }
-                            "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_DAC2BBF33A074670B4E259A1B0C25B97"
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_DAC2BBF33A074670B4E259A1B0C25B97"
                             {
                             "Name" = "8:SpiraTestNUnitAddIn"
                             "AlwaysCreate" = "11:FALSE"
@@ -721,7 +622,7 @@
                             }
                         }
                     }
-                    "{F27BD5C5-A65D-4608-96D4-7C5DA1F76302}:_3B59017B71224D9C83786CB31C645346"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3B59017B71224D9C83786CB31C645346"
                     {
                     "Name" = "8:Samples"
                     "AlwaysCreate" = "11:FALSE"
@@ -734,7 +635,7 @@
                     }
                 }
             }
-            "{78BAF5CE-F2E5-45BE-83BC-DB6AF387E941}:_5671783D698B48DE9681AD9818000243"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_5671783D698B48DE9681AD9818000243"
             {
             "Name" = "8:#1916"
             "AlwaysCreate" = "11:FALSE"
@@ -745,7 +646,7 @@
                 {
                 }
             }
-            "{78BAF5CE-F2E5-45BE-83BC-DB6AF387E941}:_6BA6239F8B5A4E73891916ACD78263BB"
+            "{1525181F-901A-416C-8A58-119130FE478E}:_6BA6239F8B5A4E73891916ACD78263BB"
             {
             "Name" = "8:#1919"
             "AlwaysCreate" = "11:FALSE"
@@ -766,6 +667,7 @@
         "MsiBootstrapper"
         {
         "LangId" = "3:1033"
+        "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
@@ -777,6 +679,7 @@
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
+        "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.5.1"
         "Manufacturer" = "8:Inflectra"
         "ARPHELPTELEPHONE" = "8:+1 202-558-6885"
@@ -791,6 +694,10 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
+        "TargetPlatform" = "3:0"
+        "PreBuildEvent" = "8:"
+        "PostBuildEvent" = "8:"
+        "RunPostBuildEvent" = "3:0"
         }
         "Registry"
         {
@@ -798,7 +705,7 @@
             {
                 "Keys"
                 {
-                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_9B272E594AF74E1EACF2A7810028BC7D"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_9B272E594AF74E1EACF2A7810028BC7D"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -807,7 +714,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_5C85E947AB824DC184731902C9B678B2"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_5C85E947AB824DC184731902C9B678B2"
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -832,7 +739,7 @@
             {
                 "Keys"
                 {
-                    "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_7BEBB22D5F034921ABAAFB5E95D09D6A"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_7BEBB22D5F034921ABAAFB5E95D09D6A"
                     {
                     "Name" = "8:Software"
                     "Condition" = "8:"
@@ -841,7 +748,7 @@
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{6A471EEF-D31B-40F8-BCF6-C9E8EC783F36}:_E78FA1030FC343C0B31EF09C001CB23A"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_E78FA1030FC343C0B31EF09C001CB23A"
                             {
                             "Name" = "8:[Manufacturer]"
                             "Condition" = "8:"
@@ -889,14 +796,14 @@
         }
         "UserInterface"
         {
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_33706F4DF21E4D74B3B3557A24A70490"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_33706F4DF21E4D74B3B3557A24A70490"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:2"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_70FFF0A7BB984871B26A177649EFED2D"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_70FFF0A7BB984871B26A177649EFED2D"
                     {
                     "Sequence" = "3:300"
                     "DisplayName" = "8:Confirm Installation"
@@ -919,7 +826,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7A598ADF2ED3493AAE80E693B92E3560"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7A598ADF2ED3493AAE80E693B92E3560"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:Installation Folder"
@@ -942,7 +849,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7BF83DD9C7FC43AE8C4BC2D146E59E38"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7BF83DD9C7FC43AE8C4BC2D146E59E38"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Welcome"
@@ -993,14 +900,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_39390BCF437743239C5BECF4EFFC07BF"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_39390BCF437743239C5BECF4EFFC07BF"
             {
             "Name" = "8:#1900"
             "Sequence" = "3:1"
             "Attributes" = "3:1"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_01043E97881947268BE4BB1FE0937F3D"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_01043E97881947268BE4BB1FE0937F3D"
                     {
                     "Sequence" = "3:200"
                     "DisplayName" = "8:Installation Folder"
@@ -1021,9 +928,22 @@
                             "Value" = "8:_9062D91C199646E3A9C615FC24E0FEC7"
                             "UsePlugInResources" = "11:TRUE"
                             }
+                            "InstallAllUsersVisible"
+                            {
+                            "Name" = "8:InstallAllUsersVisible"
+                            "DisplayName" = "8:#1059"
+                            "Description" = "8:#1159"
+                            "Type" = "3:5"
+                            "ContextData" = "8:1;True=1;False=0"
+                            "Attributes" = "3:0"
+                            "Setting" = "3:0"
+                            "Value" = "3:1"
+                            "DefaultValue" = "3:1"
+                            "UsePlugInResources" = "11:TRUE"
+                            }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_37B954A1E4654BA89B03BA61931BD3ED"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_37B954A1E4654BA89B03BA61931BD3ED"
                     {
                     "Sequence" = "3:300"
                     "DisplayName" = "8:Confirm Installation"
@@ -1046,7 +966,7 @@
                             }
                         }
                     }
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_C2DBD254C6FC484C9B7EC6A3BFE0AB1D"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_C2DBD254C6FC484C9B7EC6A3BFE0AB1D"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Welcome"
@@ -1097,20 +1017,20 @@
                     }
                 }
             }
-            "{B654A020-6903-4E6A-A86C-75DC463DB54B}:_491D662B3259478BB5702E77166745D5"
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_491D662B3259478BB5702E77166745D5"
             {
             "UseDynamicProperties" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "SourcePath" = "8:<VsdDialogDir>\\VsdUserInterface.wim"
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_79F1F97951324D83A7733CC24D6001D4"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_79F1F97951324D83A7733CC24D6001D4"
             {
             "Name" = "8:#1902"
             "Sequence" = "3:1"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_7828EBB724F849159E32935DAB649791"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_7828EBB724F849159E32935DAB649791"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Finished"
@@ -1148,14 +1068,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_87656DABA4BA41AAB830522B08F9395F"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_87656DABA4BA41AAB830522B08F9395F"
             {
             "Name" = "8:#1901"
             "Sequence" = "3:2"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_6E2F85B495974EC2AAE89CB8F7378DF4"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6E2F85B495974EC2AAE89CB8F7378DF4"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -1193,20 +1113,20 @@
                     }
                 }
             }
-            "{B654A020-6903-4E6A-A86C-75DC463DB54B}:_C67C04026DCB48D9A68B7C69BA3A3D44"
+            "{2479F3F5-0309-486D-8047-8187E2CE5BA0}:_C67C04026DCB48D9A68B7C69BA3A3D44"
             {
             "UseDynamicProperties" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "SourcePath" = "8:<VsdDialogDir>\\VsdBasicDialogs.wim"
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_EE1C7F75C61F45B2885B87C60F3BC2E9"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_EE1C7F75C61F45B2885B87C60F3BC2E9"
             {
             "Name" = "8:#1901"
             "Sequence" = "3:1"
             "Attributes" = "3:2"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_89702A1BADBE46BBBB4196EFEF8574FA"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_89702A1BADBE46BBBB4196EFEF8574FA"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Progress"
@@ -1244,14 +1164,14 @@
                     }
                 }
             }
-            "{8D9DEE8B-DD8B-4F48-9072-C4364E4F4011}:_F652D13BFC0F4540B200F2477BAE8C8B"
+            "{DF760B10-853B-4699-99F2-AFF7185B4A62}:_F652D13BFC0F4540B200F2477BAE8C8B"
             {
             "Name" = "8:#1902"
             "Sequence" = "3:2"
             "Attributes" = "3:3"
                 "Dialogs"
                 {
-                    "{18ADD6EC-89FE-4ED7-AD3E-211C40278470}:_69444085B1D6401BB8E989819D96C546"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_69444085B1D6401BB8E989819D96C546"
                     {
                     "Sequence" = "3:100"
                     "DisplayName" = "8:Finished"
@@ -1279,25 +1199,8 @@
         }
         "MergeModule"
         {
-            "{35A69C6E-5BA4-440D-803D-762B59A45393}:_5DAE8C242E1F41639A35AF2D13112EC0"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:dotnetfxredist_x86.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:1033"
-            "Exclude" = "11:TRUE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
         }
         "ProjectOutput"
-        {
-        }
-        "VJSharpPlugin"
         {
         }
     }

@@ -1,51 +1,41 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraTestNUnitAddIn", "SpiraTestNUnitAddIn\SpiraTestNUnitAddIn.csproj", "{DF958079-9EBA-49EC-A410-207CC8BDA377}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestSuite", "SampleTestSuite\SampleTestSuite.csproj", "{E832C7B2-92E1-42DB-8083-448CDE21B836}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraTestFramework", "SpiraTestFramework\SpiraTestFramework.csproj", "{7E61A312-07E9-4C59-B5D6-622925375A12}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NUnitAddinSetup", "NUnitAddinSetup\NUnitAddinSetup.vdproj", "{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumSampleTest", "SeleniumSampleTest\SeleniumSampleTest.csproj", "{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Debug.ActiveCfg = Debug|.NET
-		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Debug.Build.0 = Debug|.NET
-		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Release.ActiveCfg = Release|.NET
-		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Release.Build.0 = Release|.NET
-		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Debug.ActiveCfg = Debug|.NET
-		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Debug.Build.0 = Debug|.NET
-		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Release.ActiveCfg = Release|.NET
-		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Release.Build.0 = Release|.NET
-		{7E61A312-07E9-4C59-B5D6-622925375A12}.Debug.ActiveCfg = Debug|.NET
-		{7E61A312-07E9-4C59-B5D6-622925375A12}.Debug.Build.0 = Debug|.NET
-		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release.ActiveCfg = Release|.NET
-		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release.Build.0 = Release|.NET
-		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Debug.ActiveCfg = Debug
-		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Release.ActiveCfg = Release
-		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug.ActiveCfg = Debug|.NET
-		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug.Build.0 = Debug|.NET
-		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Release.ActiveCfg = Release|.NET
-		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Release.Build.0 = Release|.NET
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF958079-9EBA-49EC-A410-207CC8BDA377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E832C7B2-92E1-42DB-8083-448CDE21B836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E61A312-07E9-4C59-B5D6-622925375A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E61A312-07E9-4C59-B5D6-622925375A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E61A312-07E9-4C59-B5D6-622925375A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Debug|Any CPU.ActiveCfg = Debug
+		{F7D555B1-EF57-4FDF-8B8F-6BFD2D87E952}.Release|Any CPU.ActiveCfg = Release
+		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBC40C2-3C76-441B-A8C7-D5E70888D4E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
