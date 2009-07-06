@@ -82,6 +82,8 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 				}
 				else
 				{
+                    //If no codes are found, default to blocked;
+                    executionStatusId = 5;
 					if (result.IsFailure)
 					{
 						//Set status to 'Failed'
@@ -92,6 +94,11 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
 						//Set status to 'Passed'
 						executionStatusId = 2;
 					}
+                    if (result.IsError)
+                    {
+                        //Set status to 'Failed'
+                        executionStatusId = 1;
+                    }
 				}
 
 				//Extract the other information
