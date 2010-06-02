@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DF958079-9EBA-49EC-A410-207CC8BDA377}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -260,6 +260,6 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>xcopy /Y "$(TargetPath)" "C:\Program Files\NUnit 2.5\bin\net-2.0\addins"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "C:\Program Files\NUnit 2.5.5\bin\net-2.0\addins"</PostBuildEvent>
   </PropertyGroup>
 </Project>
