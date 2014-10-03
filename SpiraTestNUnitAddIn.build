@@ -2,29 +2,55 @@
 <project name="NUnit Add-In" default="zipup">
 	<target name="zipup" description="Zips up the whole application for deployment">
 		<echo message="Zipping up entire application" />
-		<zip zipfile="NUnitAddIn.zip" verbose="true" comment="SpiraTest Add-In for NUnit 2.5">
-			<fileset basedir="SpiraTestNUnitAddIn/bin/Release">
+		<zip zipfile="NUnitAddIn.zip" verbose="true" comment="SpiraTest Add-In for NUnit 2.5/2.6">
+			<!-- NUnit 2.5.5 -->
+			<fileset basedir="NUnit 2.5.5\SpiraTestNUnitAddIn/bin/Release" prefix="NUnit 2.5.5">
 				<include name="SpiraTestNUnitAddIn.dll" />
 			</fileset>
-			<fileset basedir="SampleTestSuite/bin/Release">
+			<fileset basedir="NUnit 2.5.5\SampleTestSuite/bin/Release" prefix="NUnit 2.5.5">
 				<include name="SampleTestSuite.dll" />
 			</fileset>
-			<fileset basedir="SeleniumSampleTest/bin/Release">
+			<fileset basedir="NUnit 2.5.5\SeleniumSampleTest/bin/Release" prefix="NUnit 2.5.5">
 				<include name="SeleniumSampleTest.dll" />
 			</fileset>
-			<fileset basedir="SpiraTestFramework/bin/Release">
+			<fileset basedir="NUnit 2.5.5\SpiraTestFramework/bin/Release" prefix="NUnit 2.5.5">
 				<include name="SpiraTestFramework.dll" />
 			</fileset>
-			<fileset basedir="..">
-				<include name="NUnit Add-In/**/*.cs" />
-				<include name="NUnit Add-In/**/*.csproj" />
-				<include name="NUnit Add-In/**/*.map" />
-				<include name="NUnit Add-In/**/*.datasource" />
-				<include name="NUnit Add-In/**/*.wsdl" />
-				<include name="NUnit Add-In/**/*.disco" />
-				<include name="NUnit Add-In/**/*.xsd" />
-				<include name="NUnit Add-In/**/*.sln" />
-				<include name="NUnit Add-In/**/*.vsmdi" />
+			<fileset basedir="." prefix="NUnit 2.5.5/src">
+				<include name="NUnit 2.5.5/**/*.cs" />
+				<include name="NUnit 2.5.5/**/*.csproj" />
+				<include name="NUnit 2.5.5/**/*.map" />
+				<include name="NUnit 2.5.5/**/*.datasource" />
+				<include name="NUnit 2.5.5/**/*.wsdl" />
+				<include name="NUnit 2.5.5/**/*.disco" />
+				<include name="NUnit 2.5.5/**/*.xsd" />
+				<include name="NUnit 2.5.5/**/*.sln" />
+				<include name="NUnit 2.5.5/**/*.vsmdi" />
+			</fileset>
+			
+			<!-- NUnit 2.6.3 -->
+			<fileset basedir="NUnit 2.6.3\SpiraTestNUnitAddIn/bin/Release" prefix="NUnit 2.6.3">
+				<include name="SpiraTestNUnitAddIn.dll" />
+			</fileset>
+			<fileset basedir="NUnit 2.6.3\SampleTestSuite/bin/Release" prefix="NUnit 2.6.3">
+				<include name="SampleTestSuite.dll" />
+			</fileset>
+			<fileset basedir="NUnit 2.6.3\SeleniumSampleTest/bin/Release" prefix="NUnit 2.6.3">
+				<include name="SeleniumSampleTest.dll" />
+			</fileset>
+			<fileset basedir="NUnit 2.6.3\SpiraTestFramework/bin/Release" prefix="NUnit 2.6.3">
+				<include name="SpiraTestFramework.dll" />
+			</fileset>
+			<fileset basedir="." prefix="NUnit 2.6.3/src">
+				<include name="NUnit 2.6.3/**/*.cs" />
+				<include name="NUnit 2.6.3/**/*.csproj" />
+				<include name="NUnit 2.6.3/**/*.map" />
+				<include name="NUnit 2.6.3/**/*.datasource" />
+				<include name="NUnit 2.6.3/**/*.wsdl" />
+				<include name="NUnit 2.6.3/**/*.disco" />
+				<include name="NUnit 2.6.3/**/*.xsd" />
+				<include name="NUnit 2.6.3/**/*.sln" />
+				<include name="NUnit 2.6.3/**/*.vsmdi" />
 			</fileset>
 		</zip>
 	</target>	
