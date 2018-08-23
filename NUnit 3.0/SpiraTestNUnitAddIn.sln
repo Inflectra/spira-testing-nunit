@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraTestNUnitAddIn", "SpiraTestNUnitAddIn\SpiraTestNUnitAddIn.csproj", "{CAF7224A-7FFD-4444-AF22-5A15650F63A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestSuite", "SampleTestSuite\SampleTestSuite.csproj", "{73F2A1D2-9572-4193-B1BE-ABBBC1B2E9C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAF7224A-7FFD-4444-AF22-5A15650F63A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF7224A-7FFD-4444-AF22-5A15650F63A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF7224A-7FFD-4444-AF22-5A15650F63A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF7224A-7FFD-4444-AF22-5A15650F63A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F2A1D2-9572-4193-B1BE-ABBBC1B2E9C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F2A1D2-9572-4193-B1BE-ABBBC1B2E9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F2A1D2-9572-4193-B1BE-ABBBC1B2E9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F2A1D2-9572-4193-B1BE-ABBBC1B2E9C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
