@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SpiraTestNUnitAddIn")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SpiraTest NUnit Add-In")]
+[assembly: AssemblyDescription("Import test run results from NUnit into the Spira family of products")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Inflectra Corporation")]
 [assembly: AssemblyProduct("SpiraTestNUnitAddIn")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCopyright("Copyright © Inflectra Corporation  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
