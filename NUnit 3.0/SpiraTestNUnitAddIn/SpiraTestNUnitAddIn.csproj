@@ -80,8 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SpiraEventListener.cs" />
-    <Compile Include="src\Attributes\SpiraConfigurationAttribute.cs" />
-    <Compile Include="src\Attributes\SpiraTestCaseAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\SpiraTestRun.cs" />
   </ItemGroup>

@@ -1,15 +1,14 @@
-﻿using NUnit.Framework.Interfaces;
-using System;
-using NUnit.Framework.Internal.Commands;
-using NUnit.Engine.Extensibility;
+﻿using NUnit.Engine.Extensibility;
 using NUnit.Engine;
 using System.Xml.Linq;
-using System.Xml;
+using Newtonsoft.Json.Linq;
+using System.IO;
+using System;
 
 namespace Inflectra.SpiraTest.AddOns.NUnit
 {
     [Extension(Description = "SpiraTest Reporter Extension")]
-    public class SpiraEventListener: ITestEventListener
+    public class SpiraEventListener : ITestEventListener
     {
 
         #region Filters
@@ -23,9 +22,21 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// </summary>
         private static XName testCase = "test-case";
 
+        private static XName asserts = "asserts";
+
         private static XName methodName = "methodname";
 
         private static XName executionResult = "result";
+
+        //Used to get the working directory of the test suite
+        private static XName environment = "environment";
+        private static XName workingDirectory = "cwd";
+
+        //used to get the message and stack trace, if applicable
+        private static XName failure = "failure";
+        private static XName failureMessage = "message";
+        private static XName stackTrace = "stack-trace";
+        private static JObject configuration;
 
         #endregion
 
@@ -35,15 +46,11 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             if (report.StartsWith("<test-run"))
             {
                 XElement xml = XElement.Parse(report);
-                /*foreach(XAttribute a in xml.Attributes())
-                {
-                    Console.WriteLine(a);
-                }*/
 
                 //loop through each test suite recursively
-                foreach(XElement e in xml.Elements(testSuite))
+                foreach (XElement e in xml.Elements(testSuite))
                 {
-                    ProcessTestSuite(e);
+                    ProcessTestSuite(e, null);
                 }
 
             }
@@ -52,18 +59,28 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// <summary>
         /// Recursively process a test suite
         /// </summary>
-        /// <param name="testSuite"></param>
-        private void ProcessTestSuite(XElement element)
+        private void ProcessTestSuite(XElement element, JObject configuration)
         {
-            //process any nested test suites
-            foreach(XElement e in element.Elements(testSuite))
+            if (configuration == null)
             {
-                ProcessTestSuite(e);
+                XElement e = element.Element(environment);
+                //the current working directory
+                string location = @e.Attribute(workingDirectory).Value;
+                //get the SpiraConfig.json file
+                location += @"\SpiraConfig.json";
+
+                configuration = JObject.Parse(File.ReadAllText(location));
+            }
+
+            //process any nested test suites
+            foreach (XElement e in element.Elements(testSuite))
+            {
+                ProcessTestSuite(e, configuration);
             }
             //process any test cases
-            foreach(XElement e in element.Elements(testCase))
+            foreach (XElement e in element.Elements(testCase))
             {
-                ProcessTestCase(e);
+                ProcessTestCase(e, configuration);
             }
 
         }
@@ -72,16 +89,141 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// Process a single XML test case and send it to Spira
         /// </summary>
         /// <param name="element"></param>
-        private void ProcessTestCase(XElement element)
+        private void ProcessTestCase(XElement element, JObject configuration)
         {
             SpiraTestRun testRun = new SpiraTestRun();
             //name of the method
             testRun.RunnerTestName = element.Attribute(methodName).Value;
+            //number of asserts
+            testRun.RunnerAssertCount = int.Parse(element.Attribute(asserts).Value);
+
             //either Passed, Failed, Inconclusive, or Skipped
             string result = element.Attribute(executionResult).Value;
-            
+            //convert result into something Spira understands
+            switch (result)
+            {
+                case "Passed": testRun.ExecutionStatusId = 2; break;
+                case "Failed": testRun.ExecutionStatusId = 1; break;
+                case "Inconclusive": testRun.ExecutionStatusId = 6; break;
+                case "Skipped": testRun.ExecutionStatusId = 3; break;
+                default: testRun.ExecutionStatusId = 4; break;
+            }
 
+            //optional fields
+            int? releaseId = GetSpiraReleaseId(configuration);
+            if (releaseId.HasValue)
+            {
+                testRun.ReleaseId = releaseId.Value;
+            }
+
+            int? testSetId = GetSpiraTestSetId(configuration);
+            if (testSetId.HasValue)
+            {
+                testRun.TestSetId = testSetId.Value;
+            }
+
+            testRun.TestCaseId = GetSpiraTestCaseId(testRun.RunnerTestName, configuration);
+
+            XElement fail = element.Element(failure);
+            //if we have a message and stack trace from NUnit
+            if (fail != null)
+            {
+                XElement message = fail.Element(failureMessage);
+                if (message != null)
+                {
+                    testRun.RunnerMessage = message.Value;
+                }
+                else
+                {
+                    testRun.RunnerMessage = "";
+                }
+
+                XElement trace = fail.Element(stackTrace);
+                if (trace != null)
+                {
+                    testRun.RunnerStackTrace = trace.Value;
+                }
+                else
+                {
+                    testRun.RunnerStackTrace = "";
+                }
+            }
+            else
+            {
+                testRun.RunnerMessage = "Success";
+                testRun.RunnerStackTrace = "";
+            }
+
+            //send the test run to Spira
+            testRun.PostTestRun(SpiraUrl(configuration), SpiraUsername(configuration), SpiraToken(configuration), SpiraProjectId(configuration));
         }
-    }
 
+        /// <summary>
+        /// Get the test case ID of the given method from the configuration
+        /// </summary>
+        /// <returns></returns>
+        private static int GetSpiraTestCaseId(string methodName, JObject configuration)
+        {
+            JToken testCases = configuration.GetValue("test_cases");
+            int? method = testCases.Value<int?>(methodName);
+            if(method.HasValue)
+            {
+                return method.Value;
+            }
+            
+            //return the default if method is not specified
+            return testCases.Value<int>("default");
+        }
+
+        /// <summary>
+        /// Get the release ID in Spira, if specified, null otherwise
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
+        private static int? GetSpiraReleaseId(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            int? id = credentials.Value<int?>("release_id");
+
+            return id;
+        }
+
+        /// <summary>
+        /// Get the test set ID in Spira, if specified, null otherwise
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
+        private static int? GetSpiraTestSetId(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            int? id = credentials.Value<int?>("test_set_id");
+
+            return id;
+        }
+
+        #region Spira Credentials
+        private static string SpiraUrl(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            return credentials.Value<string>("url");
+        }
+        private static string SpiraUsername(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            return credentials.Value<string>("username");
+        }
+        private static string SpiraToken(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            return credentials.Value<string>("token");
+        }
+        private static int SpiraProjectId(JObject configuration)
+        {
+            JToken credentials = configuration.GetValue("credentials");
+            return credentials.Value<int>("project_id");
+        }
+
+        #endregion
+
+    }
 }

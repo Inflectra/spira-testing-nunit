@@ -1,10 +1,8 @@
 ﻿using NUnit.Framework;
-using Inflectra.SpiraTest.AddOns.NUnit;
-using System;
 
 namespace SampleTestSuite
 {
-    [TestFixture, SpiraConfiguration("localhost/Spira", "administrator", "", 1, -1, -1)]
+    [TestFixture]
     class SampleTest
     {
         int One, Two;
@@ -15,7 +13,7 @@ namespace SampleTestSuite
             Two = 2;
         }
 
-        [Test, SpiraTestCase(1)]
+        [Test]
         public void TestAdd()
         {
             int Result = One + Two;
@@ -23,7 +21,7 @@ namespace SampleTestSuite
             Assert.AreEqual(Result, 3);
         }
 
-        [Test, SpiraTestCase(1)]
+        [Test]
         public void TestMultiply()
         {
             int Result = One * Two;
@@ -31,7 +29,7 @@ namespace SampleTestSuite
             Assert.AreEqual(Result, 3);
         }
 
-        [Test, SpiraTestCase(1)]
+        [Test]
         public void TestConcat()
         {
             string Result = string.Concat(One, Two);

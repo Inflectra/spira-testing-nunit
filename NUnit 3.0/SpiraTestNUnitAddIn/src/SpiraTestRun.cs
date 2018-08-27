@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 
@@ -14,8 +15,14 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         [JsonProperty("TestRunFormatId")]
         public int TestRunFormatId { get; set;}
 
+        [JsonProperty("RunnerAssertCount")]
+        public int RunnerAssertCount { get; set; }
+
         [JsonProperty("StartDate")]
         public string StartDate { get; set; }
+
+        [JsonProperty("EndDate")]
+        public string EndDate { get; set; }
 
         [JsonProperty("RunnerName")]
         public string RunnerName { get; set; }
@@ -47,7 +54,25 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
 
         public SpiraTestRun()
         {
+            //1 is plain text for stack traces
+            TestRunFormatId = 1;
+            RunnerName = "NUnit";
+            //start and end dates are based on the current date
+            StartDate = FormatDate();
+            EndDate = FormatDate();
 
+        }
+
+        /// <summary>
+        /// Returns an Inflectra formatted date based on the UTC DateTime
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        private static string FormatDate()
+        {
+            long time = (long) (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds - (long)TimeZoneInfo.Local.GetUtcOffset(DateTime.UtcNow).TotalMilliseconds;
+            string date = "/Date(" + time + "-0000)/";
+            return date;
         }
 
         /// <summary>
