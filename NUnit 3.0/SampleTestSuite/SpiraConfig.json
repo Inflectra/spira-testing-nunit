@@ -1,0 +1,15 @@
+﻿{
+  "credentials": {
+    "url": "https://demo.spiraservice.net/peter-inflectra",
+    "username": "administrator",
+    "token": "{90250D72-4526-4889-B670-0290BF63BC24}",
+    "project_id": 1,
+
+    "release_id": 5,
+    "test_set_id": 1
+  },
+  "test_cases": {
+    "default": 20,
+    "TestMultiply":  22
+  }
+}
