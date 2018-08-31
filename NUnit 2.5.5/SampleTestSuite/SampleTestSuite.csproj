@@ -95,9 +95,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <Name>nunit.framework</Name>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files\NUnit 2.4\bin\nunit.framework.dll</HintPath>
-      <AssemblyFolderKey>hkcu\dn\nunit 2.4.0</AssemblyFolderKey>
+      <HintPath>..\Assemblies\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

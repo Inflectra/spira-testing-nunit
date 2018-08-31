@@ -52,6 +52,27 @@
 				<include name="NUnit 2.6.3/**/*.sln" />
 				<include name="NUnit 2.6.3/**/*.vsmdi" />
 			</fileset>
+			
+			<!-- NUnit 3.0 -->
+			<fileset basedir="NUnit 3.0\SpiraTestNUnitAddIn/bin/Release" prefix="NUnit 3.0">
+				<include name="SpiraTestNUnitAddIn.dll" />
+			</fileset>
+			<fileset basedir="NUnit 3.0\SampleTestSuite/bin/Release" prefix="NUnit 3.0">
+				<include name="SampleTestSuite.dll" />
+			</fileset>
+			<fileset basedir="." prefix="NUnit 3.0/src">
+				<include name="NUnit 3.0/**/*.cs" />
+				<include name="NUnit 3.0/**/*.json" />
+				<include name="NUnit 3.0/**/*.nunit" />
+				<include name="NUnit 3.0/**/*.csproj" />
+				<include name="NUnit 3.0/**/*.map" />
+				<include name="NUnit 3.0/**/*.datasource" />
+				<include name="NUnit 3.0/**/*.wsdl" />
+				<include name="NUnit 3.0/**/*.disco" />
+				<include name="NUnit 3.0/**/*.xsd" />
+				<include name="NUnit 3.0/**/*.sln" />
+				<include name="NUnit 3.0/**/*.vsmdi" />
+			</fileset>
 		</zip>
 	</target>	
 </project>
