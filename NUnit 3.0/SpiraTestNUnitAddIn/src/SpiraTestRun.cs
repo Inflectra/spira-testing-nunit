@@ -84,6 +84,9 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             url = url + "/Services/v5_0/RestService.svc/projects/" + projectId + "/test-runs/record?username=" + username + "&api-key=" + token;
             string json = JsonConvert.SerializeObject(this);
 
+            //Specify that we will be using TLS 1.2 if this is HTTPS
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             //post the new test run to the server
             httpPOST(url, json);
         }

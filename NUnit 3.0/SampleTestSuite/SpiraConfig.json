@@ -1,7 +1,7 @@
 ﻿{
   "credentials": {
-    "url": "https://demo.spiraservice.net/peter-inflectra",
-    "username": "administrator",
+    "url": "https://demo-us.spiraservice.net/xxxxxx",
+    "username": "sampleuser",
     "token": "{90250D72-4526-4889-B670-0290BF63BC24}",
     "project_id": 1,
 
