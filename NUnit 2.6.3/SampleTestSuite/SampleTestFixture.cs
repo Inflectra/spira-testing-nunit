@@ -9,7 +9,7 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn.SampleTestSuite
 	/// </summary>
 	[
 	TestFixture,
-	SpiraTestConfiguration("http://localhost/SpiraTest", "fredbloggs", "PleaseChange", 1, 1, 2, SpiraTestConfigurationAttribute.RunnerName.NUnit)
+    SpiraTestConfiguration("https://demo-us.spiraservice.net/xxxxxxx", "fredbloggs", "PleaseChange", 1, 1, 2, SpiraTestConfigurationAttribute.RunnerName.NUnit)
 	]
 	public class SampleTestFixture
 	{

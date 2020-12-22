@@ -109,6 +109,9 @@ namespace Inflectra.SpiraTest.AddOns.SpiraTestNUnitAddIn
                 DateTime startDate = DateTime.Now.AddSeconds(-result.Time);
                 DateTime endDate = DateTime.Now;
 
+                //Specify that we will be using TLS 1.2 if this is HTTPS
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
                 //Instantiate the web-service proxy class and set the URL from the text box
                 bool success = false;
                 SpiraImportExport.ImportExport spiraTestExecuteProxy = new SpiraImportExport.ImportExport();
