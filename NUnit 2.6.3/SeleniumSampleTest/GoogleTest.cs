@@ -11,7 +11,7 @@ namespace SeleniumSampleTest
 	/// </summary>
 	[
 	TestFixture,
-	SpiraTestConfiguration("http://localhost/SpiraTest", "fredbloggs", "fredbloggs", 1, 1, SpiraTestConfigurationAttribute.RunnerName.Selenium)
+    SpiraTestConfiguration("https://demo-us.spiraservice.net/xxxxxxx", "fredbloggs", "PleaseChange", 1, 1, SpiraTestConfigurationAttribute.RunnerName.Selenium)
 	]
 	public class GoogleTest
 	{
