@@ -84,9 +84,6 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             url = url + "/Services/v5_0/RestService.svc/projects/" + projectId + "/test-runs/record?username=" + username + "&api-key=" + token;
             string json = JsonConvert.SerializeObject(this);
 
-            //Specify that we will be using TLS 1.2 if this is HTTPS
-            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
             //post the new test run to the server
             httpPOST(url, json);
         }
@@ -96,35 +93,42 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// </summary>
         private static string httpPOST(string url, string body)
         {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-            //add neccessary headers
-            request.Accept = "application/json";
-            request.ContentType = "application/json";
-            request.UserAgent = "Spira NUnit 3.x";
-
-            request.Method = "POST";
-            //send the data to the server
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+            try
             {
-                writer.Write(body);
-            }
+                //Specify that we will be using TLS 1.2 if this is HTTPS
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                //add neccessary headers
+                request.Accept = "application/json";
+                request.ContentType = "application/json";
+                request.UserAgent = "Spira NUnit 3.x";
 
-            //read the server response
-            HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-
-            string html = "";
-            using (Stream stream = response.GetResponseStream())
-            {
-                using (StreamReader reader = new StreamReader(stream))
+                request.Method = "POST";
+                //send the data to the server
+                using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
                 {
-                    html += reader.ReadToEnd();
+                    writer.Write(body);
                 }
+
+                //read the server response
+                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+
+                string html = "";
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        html += reader.ReadToEnd();
+                    }
+                }
+
+                return html;
             }
-
-            return html;
+            catch (Exception exception)
+            {
+                //Throw more information
+                throw new Exception(String.Format("Unable to post results to URL: '{0}' due to error: '{1}'", url, exception.Message));
+            }
         }
-
-
     }
 }
