@@ -45,10 +45,10 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         // Properties below are optional
 
         [JsonProperty("ReleaseId")]
-        public int ReleaseId { get; set; }
+        public int? ReleaseId { get; set; }
 
         [JsonProperty("TestSetId")]
-        public int TestSetId { get; set; }
+        public int? TestSetId { get; set; }
 
         #endregion 
 
