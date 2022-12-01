@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 namespace Inflectra.SpiraTest.AddOns.NUnit
 {
@@ -46,7 +47,6 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             if (report.StartsWith("<test-run"))
             {
                 XElement xml = XElement.Parse(report);
-
                 //loop through each test suite recursively
                 foreach (XElement e in xml.Elements(testSuite))
                 {
@@ -68,8 +68,14 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
                 string location = @e.Attribute(workingDirectory).Value;
                 //get the SpiraConfig.json file
                 location += @"\SpiraConfig.json";
-
-                configuration = JObject.Parse(File.ReadAllText(location));
+                try
+                {
+                    configuration = JObject.Parse(File.ReadAllText(location));
+                }
+                catch(Exception exception)
+                {
+                    // if the SpiraConfig.json cannot be found / read, we want to try to parse this as the old format
+                }
             }
 
             //process any nested test suites
@@ -91,6 +97,21 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// <param name="element"></param>
         private void ProcessTestCase(XElement element, JObject configuration)
         {
+            //I think in theory this should simply work lol
+            string attributeNames = "";
+            foreach (XAttribute attribute in element.Attributes())
+            {
+                attributeNames += attribute.ToString() + ", ";
+            }
+            if (attributeNames.Length > 0)
+            {
+                throw new Exception("This has em: " + attributeNames);
+            }
+            else
+            {
+                throw new Exception("NOThing");
+            }
+
             SpiraTestRun testRun = new SpiraTestRun();
             //name of the method
             testRun.RunnerTestName = element.Attribute(methodName).Value;
