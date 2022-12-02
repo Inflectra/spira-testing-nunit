@@ -98,7 +98,7 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// <param name="element"></param>
         private void ProcessTestCase(XElement element, JObject configuration)
         {
-            string testCaseId = null;
+            int testCaseId = 0;
             //xml has a <properties> element which contains <property> elements
             foreach (XElement attribute in element.Elements(properties))
             {
@@ -108,7 +108,15 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
                     //Finds the property which has a name of testcaseid (not case sensitive)
                     if (string.Equals(propertyName, "testcaseid", StringComparison.OrdinalIgnoreCase))
                     {
-                        testCaseId = property.Attribute("value").Value;
+                        //Convert.ToInt32 returns 0 as its default value if invalid
+                        try
+                        {
+                            testCaseId = Convert.ToInt32(property.Attribute("value").Value);
+                        }
+                        catch
+                        {
+                            //leave testcaseid as 0 
+                        }
                     }
                 }
             }
@@ -143,15 +151,16 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             {
                 testRun.TestSetId = testSetId.Value;
             }
-            //if There was not a test case Id included as a test run property, check the JSON config file
-            if (testCaseId == null)
+            //if There was not a valid test case Id included as a test run property, check the JSON config file
+            if (testCaseId <= 0)
             {
                 testRun.TestCaseId = GetSpiraTestCaseId(testRun.RunnerTestName, configuration);
             }
             else
             {
-                testRun.TestCaseId = Convert.ToInt32(testCaseId);
+                testRun.TestCaseId = testCaseId;
             }
+
             XElement fail = element.Element(failure);
             //if we have a message and stack trace from NUnit
             if (fail != null)
