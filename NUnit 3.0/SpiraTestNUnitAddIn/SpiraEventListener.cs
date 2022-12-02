@@ -108,7 +108,7 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
                     //Finds the property which has a name of testcaseid (not case sensitive)
                     if (string.Equals(propertyName, "testcaseid", StringComparison.OrdinalIgnoreCase))
                     {
-                        //Convert.ToInt32 returns 0 as its default value if invalid
+                        //Convert.ToInt32 throws exception if not valid
                         try
                         {
                             testCaseId = Convert.ToInt32(property.Attribute("value").Value);
