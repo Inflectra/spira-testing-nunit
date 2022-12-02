@@ -22,6 +22,7 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// The XML name of a test-case property
         /// </summary>
         private static XName testCase = "test-case";
+        private static XName properties = "properties";
 
         private static XName asserts = "asserts";
 
@@ -97,19 +98,19 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
         /// <param name="element"></param>
         private void ProcessTestCase(XElement element, JObject configuration)
         {
-            //I think in theory this should simply work lol
-            string attributeNames = "";
-            foreach (XAttribute attribute in element.Attributes())
+            string testCaseId = null;
+            //xml has a <properties> element which contains <property> elements
+            foreach (XElement attribute in element.Elements(properties))
             {
-                attributeNames += attribute.ToString() + ", ";
-            }
-            if (attributeNames.Length > 0)
-            {
-                throw new Exception("This has em: " + attributeNames);
-            }
-            else
-            {
-                throw new Exception("NOThing");
+                foreach (XElement property in attribute.Elements("property"))
+                {
+                    string propertyName = property.Attribute("name").Value;
+                    //Finds the property which has a name of testcaseid (not case sensitive)
+                    if (string.Equals(propertyName, "testcaseid", StringComparison.OrdinalIgnoreCase))
+                    {
+                        testCaseId = property.Attribute("value").Value;
+                    }
+                }
             }
 
             SpiraTestRun testRun = new SpiraTestRun();
@@ -142,9 +143,15 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             {
                 testRun.TestSetId = testSetId.Value;
             }
-
-            testRun.TestCaseId = GetSpiraTestCaseId(testRun.RunnerTestName, configuration);
-
+            //if There was not a test case Id included as a test run property, check the JSON config file
+            if (testCaseId == null)
+            {
+                testRun.TestCaseId = GetSpiraTestCaseId(testRun.RunnerTestName, configuration);
+            }
+            else
+            {
+                testRun.TestCaseId = Convert.ToInt32(testCaseId);
+            }
             XElement fail = element.Element(failure);
             //if we have a message and stack trace from NUnit
             if (fail != null)
