@@ -4,7 +4,6 @@ using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System;
-using System.Collections.Generic;
 
 namespace Inflectra.SpiraTest.AddOns.NUnit
 {
@@ -67,16 +66,9 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
                 XElement e = element.Element(environment);
                 //the current working directory
                 string location = @e.Attribute(workingDirectory).Value;
-                //get the SpiraConfig.json file
+                //get the SpiraConfig.json file - always needed even if only for credentials
                 location += @"\SpiraConfig.json";
-                try
-                {
-                    configuration = JObject.Parse(File.ReadAllText(location));
-                }
-                catch(Exception exception)
-                {
-                    // if the SpiraConfig.json cannot be found / read, we want to try to parse this as the old format
-                }
+                configuration = JObject.Parse(File.ReadAllText(location));
             }
 
             //process any nested test suites
