@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiraTestNUnitAddIn", "SpiraTestNUnitAddIn\SpiraTestNUnitAddIn.csproj", "{CAF7224A-7FFD-4444-AF22-5A15650F63A5}"
 EndProject
@@ -29,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5583AC4A-F97D-4C5D-A2BD-4A8BB2CEADF5}
 	EndGlobalSection
 EndGlobal
