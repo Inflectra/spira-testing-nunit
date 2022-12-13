@@ -147,6 +147,15 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             if (testCaseId <= 0)
             {
                 testRun.TestCaseId = GetSpiraTestCaseId(testRun.RunnerTestName, configuration);
+                //if it still equals 0 (is not in code or json config), skip execution for this test method
+                if (testRun.TestCaseId == 0)
+                {
+                    //makes the error red and puts it in the console above the final report from NUnit
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("(SpiraTestNUnitAddIn.dll) WARNING: The test method \"" + testRun.RunnerTestName + "\" did not have a configured TestCaseId, and as such was not reported to Spira. Please set a default value in your SpiraConfig.json file or ensure all tests in this suite are assigned a TestCaseId.");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    return;
+                }
             }
             else
             {
@@ -201,7 +210,7 @@ namespace Inflectra.SpiraTest.AddOns.NUnit
             }
             
             //return the default if method is not specified
-            return testCases.Value<int>("default");
+            return testCases.Value<int?>("default") ?? 0;
         }
 
         /// <summary>
